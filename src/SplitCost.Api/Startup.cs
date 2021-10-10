@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using SplitCost.Infrastructure;
 
 namespace SplitCost.Api
 {
@@ -32,6 +33,8 @@ namespace SplitCost.Api
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "SplitCost.Api", Version = "v1" });
             });
+
+            services.AddInfrastructure(Configuration);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
