@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SplitCost.Domain
+namespace SplitCost.Domain.Entities
 {
     public class ShoppingList
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SplitCost.Domain
+namespace SplitCost.Domain.Entities
 {
     public class ShoppingListItem
     {

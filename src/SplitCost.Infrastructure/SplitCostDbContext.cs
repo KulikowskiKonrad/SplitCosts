@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SplitCost.Infrastructure
 {
-    public class SplitCostDbContext : DbContext
+    internal class SplitCostDbContext : DbContext
     {
         public DbSet<ShoppingList> ShoppingLists { get; set; }
         public DbSet<ShoppingListItem> ShoppingListItems { get; set; }
