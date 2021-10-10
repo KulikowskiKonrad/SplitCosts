@@ -12,6 +12,11 @@ namespace SplitCost.Domain
         public ShoppingList ShoppingList { get; private set; }
         public Guid ShoppingListId { get; private set; }
 
+        private ShoppingListItem()
+        {
+            // For EF
+        }
+
         public ShoppingListItem(Guid id, string name, ShoppingList shoppingList)
         {
             Id = id;

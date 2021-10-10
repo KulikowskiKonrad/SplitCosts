@@ -17,6 +17,7 @@ namespace SplitCost.Infrastructure
             {
                 opt.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
             });
+
             return services;
         }
     }
