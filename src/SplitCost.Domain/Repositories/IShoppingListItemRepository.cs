@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace SplitCost.Domain.Repositories
 {
-    public interface IShoppingListRepository
+    public interface IShoppingListItemRepository
     {
-        Task AddAsync(ShoppingList shoppingList);
-        Task<ShoppingList> GetByIdAsync(Guid id);
+        Task AddAsync(ShoppingListItem shoppingListItem);
     }
 }

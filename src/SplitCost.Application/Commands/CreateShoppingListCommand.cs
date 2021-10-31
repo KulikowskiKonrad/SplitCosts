@@ -10,13 +10,13 @@ using System.Threading.Tasks;
 
 namespace SplitCost.Application.Commands
 {
-    public class CreatShoppingListCommand : IRequest
+    public class CreateShoppingListCommand : IRequest
     {
         public Guid Id { get; } = Guid.NewGuid();
         public string Name { get; set; }
     }
 
-    public class CreatShoppingListCommandHandler : IRequestHandler<CreatShoppingListCommand>
+    public class CreatShoppingListCommandHandler : IRequestHandler<CreateShoppingListCommand>
     {
         private readonly IShoppingListRepository _shoppingListRepository;
 
@@ -25,7 +25,7 @@ namespace SplitCost.Application.Commands
             _shoppingListRepository = shoppingListRepository;
         }
 
-        public async Task<Unit> Handle(CreatShoppingListCommand request, CancellationToken cancellationToken)
+        public async Task<Unit> Handle(CreateShoppingListCommand request, CancellationToken cancellationToken)
         {
             var shoppingList = new ShoppingList(request.Id, request.Name);
             await _shoppingListRepository.AddAsync(shoppingList);

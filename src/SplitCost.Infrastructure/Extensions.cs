@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using SplitCost.Domain.Repositories;
 using SplitCost.Infrastructure.Repositories;
+using SplitCost.Application.Queries.ShoppingList.GetShoppingList;
 
 namespace SplitCost.Infrastructure
 {
@@ -24,6 +25,7 @@ namespace SplitCost.Infrastructure
 
             services.AddMediatR(typeof(CreatShoppingListCommandHandler));
             services.AddScoped<IShoppingListRepository, ShoppingListRepository>();
+            services.AddScoped<IShoppingListItemRepository, ShoppingListItemRepository>();
             return services;
         }
     }

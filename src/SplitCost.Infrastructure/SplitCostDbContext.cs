@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SplitCost.Domain;
+using SplitCost.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;

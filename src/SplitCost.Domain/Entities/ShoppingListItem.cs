@@ -26,5 +26,21 @@ namespace SplitCost.Domain.Entities
             ModificationDate = DateTime.UtcNow;
             ShoppingListId = shoppingList.Id;
         }
+
+        public void ChangeName(string name)
+        {
+            SetName(name);
+            ModificationDate = DateTime.UtcNow;
+        }
+
+        private void SetName(string name)
+        {
+            if (string.IsNullOrEmpty(name))
+            {
+                throw new ArgumentException($"'{nameof(name)}' cannot be null or empty", nameof(name));
+            }
+
+            Name = name;
+        }
     }
 }

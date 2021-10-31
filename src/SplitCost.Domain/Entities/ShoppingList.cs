@@ -48,7 +48,9 @@ namespace SplitCost.Domain.Entities
         public int Count()
         {
             if (Items is null)
+            {
                 throw new Exception("Property not included.");
+            }
 
             return Items.Count;
         }

@@ -1,4 +1,5 @@
-﻿using SplitCost.Domain.Entities;
+﻿using Microsoft.EntityFrameworkCore;
+using SplitCost.Domain.Entities;
 using SplitCost.Domain.Repositories;
 using System;
 using System.Collections.Generic;
@@ -16,10 +17,16 @@ namespace SplitCost.Infrastructure.Repositories
         {
             _dbContext = dbContext;
         }
+
         public async Task AddAsync(ShoppingList shoppingList)
         {
             await _dbContext.AddAsync(shoppingList);
             await _dbContext.SaveChangesAsync();
+        }
+
+        public  async Task<ShoppingList> GetByIdAsync(Guid id)
+        {
+           return await _dbContext.ShoppingLists.Where(x => x.Id == id).SingleOrDefaultAsync();
         }
     }
 }
